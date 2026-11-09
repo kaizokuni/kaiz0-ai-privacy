@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage wla khedma b Claude</title>
+<meta name="description" content="L-guide kamel: connecti Indeed f Claude, 3 prompts b blanks t3emmerhom, CV w lettre l kol offre. B darija.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root { --bg: #fffaf3; --paper: #ffffff; --ink: #1c1a16; --muted: #6a645a; --accent: #c2410c; --accent-2: #f59e0b; --box: #fff3e6; --box-line: #f5c9a4; --line: #ece4d6; --code: #2b2520; --ok: #15803d; --shadow: 0 10px 30px rgba(120, 70, 20, 0.08); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #141210; --paper: #1d1915; --ink: #f2ebe0; --muted: #a79d8f; --accent: #fb923c; --accent-2: #fbbf24; --box: #2a2017; --box-line: #4a3220; --line: #2c261f; --code: #f6e9d9; --ok: #4ade80; --shadow: 0 10px 30px rgba(0,0,0,0.35); } }
+  :root[data-theme="dark"] { --bg: #141210; --paper: #1d1915; --ink: #f2ebe0; --muted: #a79d8f; --accent: #fb923c; --accent-2: #fbbf24; --box: #2a2017; --box-line: #4a3220; --line: #2c261f; --code: #f6e9d9; --ok: #4ade80; --shadow: 0 10px 30px rgba(0,0,0,0.35); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.55; padding: 0 16px 56px; }
+  main { max-width: 700px; margin: 0 auto; }
+  .hero { padding: 36px 0 22px; }
+  .eyebrow { display: inline-block; font: 600 12px/1 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); background: var(--box); border: 1px solid var(--box-line); border-radius: 999px; padding: 7px 12px; margin-bottom: 14px; }
+  h1 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: clamp(34px, 8vw, 52px); line-height: 1.05; margin: 0 0 12px; text-wrap: balance; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); margin: 0 0 18px; font-size: 17px; }
+  .fr { color: var(--muted); font-size: 15px; font-style: italic; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 8px; }
+  .chip { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; font-size: 14px; font-weight: 600; box-shadow: var(--shadow); }
+  .chip i { font-style: normal; color: var(--accent); margin-right: 4px; }
+  .who { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; margin: 18px 0 6px; box-shadow: var(--shadow); font-size: 15.5px; }
+  section.step { background: var(--paper); border: 1px solid var(--line); border-radius: 18px; padding: 20px 18px 16px; margin: 18px 0; box-shadow: var(--shadow); }
+  h2 { font-family: Fraunces, Georgia, serif; font-weight: 800; font-size: 24px; margin: 0 0 10px; display: flex; align-items: center; gap: 12px; line-height: 1.15; }
+  .n { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: #fff; font: 700 15px Inter, sans-serif; display: inline-flex; align-items: center; justify-content: center; }
+  h3 { font: 700 16px Inter, sans-serif; margin: 16px 0 6px; }
+  p, li { margin: 0 0 8px; }
+  ul, ol { padding-left: 22px; margin: 0; }
+  ol li { padding-left: 4px; }
+  .prompt { position: relative; background: var(--box); border: 1px solid var(--box-line); border-left: 5px solid var(--accent); border-radius: 10px; padding: 14px 16px 48px; margin: 10px 0 10px; font-family: ui-monospace, Consolas, monospace; font-size: 14.5px; line-height: 1.6; color: var(--code); white-space: pre-wrap; word-wrap: break-word; }
+  .blank { color: var(--accent); font-weight: 700; border-bottom: 2px dashed var(--accent-2); padding: 0 2px; }
+  .copy { position: absolute; right: 10px; bottom: 10px; font: 600 13px Inter, sans-serif; background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer; }
+  .copy:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .hint { color: var(--muted); font-size: 15px; }
+  details { border: 1px dashed var(--box-line); border-radius: 10px; padding: 10px 14px; margin: 10px 0; background: var(--bg); }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { margin: 8px 0 0; font-size: 15px; }
+  table.ex { width: 100%; border-collapse: collapse; font-size: 14.5px; margin-top: 8px; }
+  table.ex th, table.ex td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.ex th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; }
+  .path { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0 12px; }
+  kbd { font: 600 14px Inter, sans-serif; background: var(--box); border: 1px solid var(--box-line); border-bottom-width: 2px; border-radius: 6px; padding: 3px 8px; }
+  .arrow { color: var(--muted); }
+  .ok { color: var(--ok); font-weight: 700; }
+  .warn { background: var(--box); border-left: 4px solid var(--accent-2); border-radius: 8px; padding: 10px 12px; font-size: 15px; margin: 10px 0; }
+  .tips li { margin-bottom: 8px; }
+  .cta { background: var(--accent); color: #fff; border-radius: 16px; padding: 18px; margin: 26px 0 0; font-weight: 600; }
+  .cta .fr { color: rgba(255,255,255,.85); }
+  .foot { margin-top: 30px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+  <span class="eyebrow">kaiz0.ai · l'AI b darija</span>
+  <h1>Stage wla khedma b Claude</h1>
+  <p class="sub">Claude kay9elleb 3lik f Indeed, ykiyyef lik CV 3la l'offre, w ykteb lik lettre de motivation. 5 minutes, bla code, <b>l ay filière</b>: informatique, marketing, comptabilité, gestion, droit, santé…<br><span class="fr">FR : Claude cherche les offres sur Indeed, adapte ton CV à l'offre et rédige ta lettre. 5 minutes, sans code, pour toutes les filières.</span></p>
+  <div class="chips"><span class="chip"><i>1</i> Connecti Indeed</span><span class="chip"><i>2</i> Prompt l-ba7t</span><span class="chip"><i>3</i> CV + lettre</span></div>
+  <div class="who">💡 <b>Kifach tkhdem had l-guide:</b> kol prompt fih <span class="blank">[ blanks ]</span> b l'orange. 3emmerhom b dyalk (l-filière, l-ville, chno kat3ref) 9bel ma tsift. Ma khasekch tkoun ingénieur: les exemples lta7t l kol filière.</div>
+</header>
+
+<section class="step">
+  <h2><span class="n">1</span> Jib Claude</h2>
+  <p>Sir l <b>claude.ai</b> f navigateur, wla telecharger l'application (<b>claude.com/download</b>, kayna l iPhone, Android, Windows w Mac). Dir compte b email dyalk wla b Google. L-plan gratuit kafi bach tbda.</p>
+</section>
+
+<section class="step">
+  <h2><span class="n">2</span> Connecti Indeed (b tafsil)</h2>
+  <p>Had l-connexion hiya li katkhelli Claude y9elleb f les offres dyal Indeed bo7do w y7ell kol offre bach y9ra les détails. Katdirha <b>merra wa7da</b>.</p>
+  <h3>🖥️ F navigateur (claude.ai)</h3>
+  <ol>
+    <li>Dkhol l <b>claude.ai</b>, kliki 3la <b>smiytek / l-icône dyal profil</b> (lta7t 3la l-isar).</li>
+    <li>Khtar <kbd>Settings</kbd> (Paramètres).</li>
+    <li>F l-menu, kliki <kbd>Connectors</kbd> (Connecteurs).</li>
+    <li>Kliki <kbd>Browse connectors</kbd> w kteb <b>Indeed</b> f la recherche.</li>
+    <li>3la la carte dyal Indeed kliki <kbd>Connect</kbd>.</li>
+    <li>Ghadi t7ell lik safi7a dyal Indeed: <b>dkhol b compte Indeed dyalk</b> (wla dir wa7ed jdid, gratuit), w kliki <kbd>Autoriser / Allow</kbd>.</li>
+    <li>Rje3 l Claude: l-bouton wella <span class="ok">Connected ✓</span>.</li>
+  </ol>
+  <h3>📱 F l'application (téléphone)</h3>
+  <ol>
+    <li>7ell l'app Claude → <kbd>☰</kbd> → <kbd>Settings</kbd> → <kbd>Connectors</kbd>.</li>
+    <li>Nafs l-khotwat: 9elleb 3la <b>Indeed</b> → <kbd>Connect</kbd> → dkhol b compte Indeed → <kbd>Allow</kbd>.</li>
+  </ol>
+  <h3>✅ T2ekked 9bel ma tbda chat</h3>
+  <div class="path"><kbd>Chat jdid</kbd><span class="arrow">→</span><kbd>+</kbd> (wla l-icône dyal les outils)<span class="arrow">→</span><kbd>Connectors</kbd><span class="arrow">→</span><b>Indeed</b> khasso ykoun <span class="ok">activé</span></div>
+  <div class="warn"><b>Ma l9itich Indeed f Connectors?</b> ① Update l'application / 3awed 7ell claude.ai. ② Jerreb f navigateur machi f l'app. ③ Ila mazal: ma mochkil, f Prompt 1 zid f l-akhir: « Ila ma 9dertich tdkhol l Indeed, 3tini les liens dyal la recherche Indeed w ana n7ellhom », wla colli lih nta les liens dyal les offres li l9iti.</div>
+  <p class="hint">LinkedIn ma 3ndoch connector f Claude daba, hadchi 3lach kankhdmo b Indeed.</p>
+</section>
+
+<section class="step">
+  <h2><span class="n">3</span> Prompt 1: 9elleb 3la les offres</h2>
+  <p>Copy-colli f chat jdid, w 3emmer <span class="blank">[ les blanks ]</span>:</p>
+  <div class="prompt" id="p1">Ana <span class="blank">[ étudiant f l-année finale / jeune diplômé ]</span> f <span class="blank">[ l-filière dyalk: ex. marketing, comptabilité, informatique, gestion, droit… ]</span> f <span class="blank">[ l-ville dyalk ]</span>. Kan9elleb 3la <span class="blank">[ stage PFE / stage / premier emploi / poste junior ]</span> f <span class="blank">[ l-domaine li bghiti: ex. community management, audit, développement web, RH… ]</span>. Chno kan3ref: <span class="blank">[ 3-5 compétences wla outils: ex. Excel, Canva, Sage, Python… ]</span>. 9elleb liya f Indeed 3la les offres li kaynin daba f Maroc, 3tini ghir li kay9eblo les débutants, f tableau: l'entreprise, l-ville, l-lien, w 3lach katnasbni.<button class="copy" data-for="p1" type="button">Copier</button></div>
+  <p>Claude kayjib lik tableau b les offres li kaynin daba, b l-lien dyal kol wa7da. Khtar li 3ejbatek.</p>
+  <details><summary>Exemples m3emmrin (3 filières)</summary>
+    <table class="ex">
+      <tr><th>Filière</th><th>Kifach t3emmer</th></tr>
+      <tr><td>Marketing</td><td>jeune diplômée f <b>marketing</b> f <b>Rabat</b> · <b>premier emploi</b> f <b>community management</b> · <b>Canva, Meta Ads, Excel, rédaction</b></td></tr>
+      <tr><td>Comptabilité</td><td>étudiant f l-année finale f <b>comptabilité</b> f <b>Fès</b> · <b>stage PFE</b> f <b>audit / comptabilité</b> · <b>Sage, Excel, bilan, TVA</b></td></tr>
+      <tr><td>Informatique</td><td>étudiant f l-année finale <b>informatique</b> f <b>Casablanca</b> · <b>stage PFE</b> f <b>développement web</b> · <b>React, Node.js, SQL</b></td></tr>
+    </table>
+  </details>
+</section>
+
+<section class="step">
+  <h2><span class="n">4</span> Prompt 2: CV mkiyef 3la l'offre</h2>
+  <p>7ett CV dyalek (PDF wla Word) f nafs l-chat, w kteb:</p>
+  <div class="prompt" id="p2">Khtart had l'offre: <span class="blank">[ colli l-lien dyal l'offre ]</span>. Hak CV dyali. Kiyyefo 3la had l'offre: 7ett les mots-clés dyalha f CV b nafs l-kelmat, <b>ghir li 3ndi bessa7</b>, w gol liya chno na9es fiya bach n-zido wla n-t3ellmo.<button class="copy" data-for="p2" type="button">Copier</button></div>
+  <p>Claude kayakhod les mots-clés li kat9elleb 3lihom l'entreprise (les outils, les compétences) w kay7etthom f CV dyalk <b>ghir ila kanou 3ndek</b>. Ma tkdebch f CV: l'entretien ghadi ybeyyen.</p>
+</section>
+
+<section class="step">
+  <h2><span class="n">5</span> Prompt 3: lettre de motivation</h2>
+  <div class="prompt" id="p3">Kteb liya lettre de motivation 9sira b <span class="blank">[ français / anglais ]</span> l had l'offre: 3 paragraphes (3lach ana, 3lach homa, chno ghadi njib), b ton <span class="blank">[ simple w direct / professionnel ]</span>, bla jomal 3amma.<button class="copy" data-for="p3" type="button">Copier</button></div>
+  <p>Copier, coller, 9raha merra, bdel chi jomla b dyalk, w sift. Nafs chi l kol offre: 2 prompts w safi.</p>
+</section>
+
+<section class="step tips">
+  <h2>Nasa2i7 9bel ma tsift</h2>
+  <ul>
+    <li><b>9ra l'offre mn l-lien</b> 9bel ma tsift: l-ville, la durée, w wach kay9eblo les débutants.</li>
+    <li><b>Wa7ed CV l kol offre</b>, machi nafs CV l ga3 les offres. Hadchi howa l-fr9.</li>
+    <li><b>Les mots-clés</b> dyal l'offre khasshom ykounou f CV b nafs l-kelma ("Excel avancé" machi "bureautique").</li>
+    <li><b>Lettre 9sira</b>: 3 paragraphes, 3lach nta, 3lach homa, chno ghadi tjib.</li>
+    <li>Ila ma jawbouch f 10 ayam, 3awed sift message 9sir l recruteur (LinkedIn wla email).</li>
+  </ul>
+</section>
+
+<div class="cta">Bghiti Claude ydir had chi bo7do kol sba7, w ysift lik les offres jdad 9bel ma tfi9? Golha liya f les commentaires dyal l-video, w ndir 3liha video.<br><span class="fr">FR : tu veux que Claude fasse ça tout seul chaque matin ? Dis-le en commentaire.</span></div>
+
+<div class="foot"><span>kaiz0.ai · l'AI b darija</span><span>Instagram & TikTok @kaiz0.ai</span></div>
+</main>
+<script>
+  document.querySelectorAll('.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var box = document.getElementById(b.dataset.for).cloneNode(true);
+      box.querySelector('.copy').remove();
+      var t = box.textContent.trim();
+      (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { b.textContent = 'Copié ✓'; setTimeout(function () { b.textContent = 'Copier'; }, 1500); }, function () { b.textContent = 'Sélectionne w copie'; });
+    });
+  });
+</script>
+</body>
+</html>
