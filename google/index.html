@@ -46,14 +46,15 @@
   .sec-head h2 { font-size: 15px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin: 0; }
   .sec-note { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
 
-  .tool { background: var(--raised); border: 1px solid var(--line); padding: 16px 18px; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; }
-  .num { grid-row: 1 / -1; font-family: "JetBrains Mono", Consolas, monospace; font-weight: 500; font-size: 13px; color: var(--gold-ink); border: 1px solid var(--gold); width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; margin-top: 2px; font-variant-numeric: tabular-nums; }
-  .tool h3 { margin: 0; font-size: 19px; font-weight: 800; letter-spacing: -.2px; min-width: 0; font-family: inherit; }
+  .tool { background: var(--raised); border: 1px solid var(--line); padding: 16px 18px 16px 66px; position: relative; max-width: 100%; }
+  .num { position: absolute; left: 18px; top: 18px; font-family: "JetBrains Mono", Consolas, monospace; font-weight: 500; font-size: 13px; color: var(--gold-ink); border: 1px solid var(--gold); width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums; }
+  .tool h3 { margin: 0 0 4px; font-size: 19px; font-weight: 800; letter-spacing: -.2px; font-family: inherit; }
   .tool h3 .in { font-weight: 400; font-size: 14px; color: var(--muted); }
-  .tool > p { margin: 2px 0 2px; color: var(--muted); font-size: 15px; min-width: 0; }
-  .tool a.site { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; font-weight: 500; color: var(--gold-ink); text-decoration: none; border-bottom: 1px solid var(--gold); width: fit-content; max-width: 100%; overflow-wrap: anywhere; }
+  .tool > p { margin: 0 0 6px; color: var(--muted); font-size: 15px; }
+  .tool a.site { display: inline-block; font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; font-weight: 500; color: var(--gold-ink); text-decoration: none; border-bottom: 1px solid var(--gold); max-width: 100%; overflow-wrap: anywhere; }
   .tool a.site:hover, .tool a.site:focus-visible { background: var(--gold); color: #141210; outline: none; }
   .tag { display: inline-block; font-family: "JetBrains Mono", Consolas, monospace; font-size: 11px; letter-spacing: .06em; color: var(--green); border: 1px solid var(--green); padding: 1px 7px; margin-left: 8px; vertical-align: 2px; }
+  @media (max-width: 480px) { .tool { padding-left: 18px; } .num { position: static; margin-bottom: 8px; } }
   .how { min-width: 0; margin: 8px 0 0; }
   .how b { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-ink); font-family: "JetBrains Mono", Consolas, monospace; font-weight: 500; }
   .how ol { margin: 6px 0 0; padding-left: 20px; font-size: 15px; }
