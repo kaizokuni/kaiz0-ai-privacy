@@ -4,21 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>10 Tools AI dyal Google</title>
-<meta name="description" content="L-liste kamla dyal les 10 tools AI fabor dyal Google: chno kaydir kol wa7ed w fin tl9ah. B darija.">
+<meta name="description" content="L-guide kamel dyal les 10 tools AI fabor dyal Google: kifach tbda f kol wa7ed, m3a prompt wajed t-copyh. B darija.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700;800&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@500&display=swap">
 <style>
   /* kaiz0.ai kit v4: cream/dark ground, gold accent, straight rectangles, corner brackets. */
   :root {
     --surface: #f5f2ec; --raised: #ffffff; --ink: #141210; --muted: #57524a;
     --gold: #e8b04b; --gold-ink: #8a6010; --line: #e3ddd2; --green: #1f9d5b;
+    --box: #faf6ee; --code: #2b2520;
   }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
     --surface: #111111; --raised: #1b1916; --ink: #f2eee6; --muted: #a9a399;
-    --gold: #e8b04b; --gold-ink: #e8b04b; --line: #2a2724; --green: #3ddc84; color-scheme: dark;
+    --gold: #e8b04b; --gold-ink: #e8b04b; --line: #2a2724; --green: #3ddc84;
+    --box: #16130f; --code: #e8e2d6; color-scheme: dark;
   } }
   :root[data-theme="dark"] {
     --surface: #111111; --raised: #1b1916; --ink: #f2eee6; --muted: #a9a399;
-    --gold: #e8b04b; --gold-ink: #e8b04b; --line: #2a2724; --green: #3ddc84; color-scheme: dark;
+    --gold: #e8b04b; --gold-ink: #e8b04b; --line: #2a2724; --green: #3ddc84;
+    --box: #16130f; --code: #e8e2d6; color-scheme: dark;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; }
@@ -35,7 +38,7 @@
   .lead { color: var(--muted); margin: 0; max-width: 46ch; }
   .lead strong { color: var(--ink); }
 
-  section { display: flex; flex-direction: column; gap: 12px; }
+  section { display: flex; flex-direction: column; gap: 14px; }
   .sec-head { position: relative; padding: 10px 14px; margin-bottom: 6px; }
   .sec-head::before, .sec-head::after { content: ""; position: absolute; width: 22px; height: 22px; border: 2px solid var(--gold); }
   .sec-head::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
@@ -44,13 +47,24 @@
   .sec-note { color: var(--muted); font-size: 14px; margin: 0 0 4px; }
 
   .tool { background: var(--raised); border: 1px solid var(--line); padding: 16px 18px; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; }
-  .num { grid-row: 1 / span 3; font-family: "JetBrains Mono", Consolas, monospace; font-weight: 500; font-size: 13px; color: var(--gold-ink); border: 1px solid var(--gold); width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .num { grid-row: 1 / -1; font-family: "JetBrains Mono", Consolas, monospace; font-weight: 500; font-size: 13px; color: var(--gold-ink); border: 1px solid var(--gold); width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; margin-top: 2px; font-variant-numeric: tabular-nums; }
   .tool h3 { margin: 0; font-size: 19px; font-weight: 800; letter-spacing: -.2px; min-width: 0; font-family: inherit; }
   .tool h3 .in { font-weight: 400; font-size: 14px; color: var(--muted); }
-  .tool p { margin: 2px 0 6px; color: var(--muted); font-size: 15px; min-width: 0; }
-  .tool a { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; font-weight: 500; color: var(--gold-ink); text-decoration: none; border-bottom: 1px solid var(--gold); width: fit-content; max-width: 100%; overflow-wrap: anywhere; }
-  .tool a:hover, .tool a:focus-visible { background: var(--gold); color: #141210; outline: none; }
+  .tool > p { margin: 2px 0 2px; color: var(--muted); font-size: 15px; min-width: 0; }
+  .tool a.site { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; font-weight: 500; color: var(--gold-ink); text-decoration: none; border-bottom: 1px solid var(--gold); width: fit-content; max-width: 100%; overflow-wrap: anywhere; }
+  .tool a.site:hover, .tool a.site:focus-visible { background: var(--gold); color: #141210; outline: none; }
   .tag { display: inline-block; font-family: "JetBrains Mono", Consolas, monospace; font-size: 11px; letter-spacing: .06em; color: var(--green); border: 1px solid var(--green); padding: 1px 7px; margin-left: 8px; vertical-align: 2px; }
+  .how { min-width: 0; margin: 8px 0 0; }
+  .how b { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold-ink); font-family: "JetBrains Mono", Consolas, monospace; font-weight: 500; }
+  .how ol { margin: 6px 0 0; padding-left: 20px; font-size: 15px; }
+  .how li { margin: 0 0 4px; }
+  .how li b { all: unset; font-weight: 700; }
+  .prompt { position: relative; min-width: 0; background: var(--box); border: 1px solid var(--line); border-left: 4px solid var(--gold); padding: 12px 14px 46px; margin: 10px 0 2px; font-family: ui-monospace, Consolas, monospace; font-size: 13.5px; line-height: 1.6; color: var(--code); white-space: pre-wrap; overflow-wrap: break-word; }
+  .prompt .lbl { position: absolute; top: -9px; left: 10px; background: var(--raised); padding: 0 6px; font-family: "JetBrains Mono", Consolas, monospace; font-size: 11px; letter-spacing: .08em; color: var(--gold-ink); }
+  .blank { color: var(--gold-ink); font-weight: 700; border-bottom: 2px dashed var(--gold); padding: 0 2px; }
+  .copy { position: absolute; right: 10px; bottom: 10px; font: 700 13px "Inter Tight", sans-serif; background: var(--gold); color: #141210; border: 0; padding: 8px 14px; cursor: pointer; }
+  .copy:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .hint { color: var(--muted); font-size: 13.5px; margin: 6px 0 0; min-width: 0; }
 
   footer { border-top: 1px solid var(--line); padding-top: 22px; display: flex; flex-direction: column; gap: 10px; }
   footer p { margin: 0; color: var(--muted); font-size: 15px; }
@@ -63,7 +77,7 @@
   <header>
     <p class="mono">KAIZ0.AI &middot; L'AI B DARIJA</p>
     <h1>10 dyal tools AI dyal Google. <em>Fabor.</em></h1>
-    <p class="lead">Kolhom khdamin <strong>mn l-Maghrib</strong>, ghir b <strong>compte Gmail</strong> dyalk. Hada houwa l-lien li wa3edtek bih f l-video: l-liste kamla, m3a fin tl9a kol wa7ed.</p>
+    <p class="lead">Kolhom khdamin <strong>mn l-Maghrib</strong>, ghir b <strong>compte Gmail</strong> dyalk. L kol tool: fin tl9ah, kifach tbda khotwa b khotwa, w prompt wajed t-copyh. Les mots f <span class="blank">had l-couleur</span> beddelhom b dyalk.</p>
   </header>
 
   <section>
@@ -73,36 +87,77 @@
     <div class="tool">
       <span class="num">06</span>
       <h3>Deep Research <span class="in">f Gemini</span><span class="tag">LI GOLT 3LIH</span></h3>
-      <p>Hada houwa li hdart 3lih f l-video: kat3tih ay sujet, kay9elleb f l'internet bo7do, kay9ra les sites, w kaykteb lik rapport kamel.</p>
-      <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a>
+      <p>Kat3tih ay sujet, kay9elleb f l'internet bo7do, kay9ra les sites wa7ed b wa7ed, w kaykteb lik rapport kamel w organis&eacute;.</p>
+      <a class="site" href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a>
+      <div class="how"><b>Kifach tbda</b>
+        <ol>
+          <li>Sir l <b>gemini.google.com</b> w dkhel b Gmail dyalk.</li>
+          <li>F l-barre dyal l-message, khtar <b>"Deep Research"</b> f la liste dyal les outils.</li>
+          <li>Kteb l-sujet b d&eacute;tail, w khellih yekhdem chi d9ay9 &mdash; kayjik rapport kamel.</li>
+        </ol>
+      </div>
+      <div class="prompt" id="p-research"><span class="lbl">PROMPT</span>Dir liya recherche kamla 3la: <span class="blank">les meilleures niches dyal e-commerce f le Maroc f 2026</span>. Bghit les chiffres, la concurrence, les produits li kaytba3o mzyan, w les sources. Ktebha f rapport organisé b des sections.<button class="copy" data-for="p-research">Copier</button></div>
     </div>
 
     <div class="tool">
       <span class="num">07</span>
       <h3>Google AI Studio</h3>
-      <p>Jereb ga3 les mod&egrave;les dyal Gemini f blassa we7da: chat, tsawer, voice &mdash; w t9der tbni bih application dyalk b "Build".</p>
-      <a href="https://aistudio.google.com" target="_blank" rel="noopener">aistudio.google.com</a>
+      <p>Ga3 les mod&egrave;les dyal Gemini f blassa we7da &mdash; w b <b>"Build"</b> katkteb description w kaysayeb lik application kamla.</p>
+      <a class="site" href="https://aistudio.google.com" target="_blank" rel="noopener">aistudio.google.com</a>
+      <div class="how"><b>Kifach tbda</b>
+        <ol>
+          <li>Sir l <b>aistudio.google.com</b> w dkhel b Gmail dyalk.</li>
+          <li>F <b>Chat</b> t9der tjereb les mod&egrave;les; l application khtar <b>Build</b> f la barre dyal lisser.</li>
+          <li>Kteb chno bghiti tbni, w chouf l'application khedama 9oddamk.</li>
+        </ol>
+      </div>
+      <div class="prompt" id="p-studio"><span class="lbl">PROMPT (F BUILD)</span>Construis-moi une petite application web: <span class="blank">je tape les ingrédients que j'ai à la maison, et elle me propose 3 recettes marocaines</span> avec les étapes et le temps de préparation. Design simple et propre.<button class="copy" data-for="p-studio">Copier</button></div>
     </div>
 
     <div class="tool">
       <span class="num">08</span>
       <h3>Canvas <span class="in">f Gemini</span></h3>
-      <p>Katkteb m3a l'AI f nefs s-safha: documents, code w des mini-apps li t9der tjerrebhom direct.</p>
-      <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a>
+      <p>Katkteb m3a l'AI f nefs s-safha: documents, code w des mini-apps li tjerrebhom direct &mdash; w kat-modifiw m3a b&eacute;3diyatkom.</p>
+      <a class="site" href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a>
+      <div class="how"><b>Kifach tbda</b>
+        <ol>
+          <li>F <b>gemini.google.com</b>, khtar <b>"Canvas"</b> f la liste dyal les outils.</li>
+          <li>Kteb chno bghiti tkteb wla tbni.</li>
+          <li>L-document kayt7el f s-safha: click 3la ay partie w golih chno ibeddel fiha.</li>
+        </ol>
+      </div>
+      <div class="prompt" id="p-canvas"><span class="lbl">PROMPT</span>Kteb liya <span class="blank">CV professionnel b français l développeur web débutant</span>: les sections kamlin (profil, compétences, projets, formation), w khellih f format n9der n-modifih hna m3ak.<button class="copy" data-for="p-canvas">Copier</button></div>
     </div>
 
     <div class="tool">
       <span class="num">09</span>
       <h3>Gemini f Chrome</h3>
-      <p>Gemini mdmoj f Chrome: kayjaweb 3la ay page nta fiha, bla ma tkhrej menha. (Desktop; mazal kayweslo bih l koulchi chwiya b chwiya.)</p>
-      <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">google.com/chrome</a>
+      <p>Gemini mdmoj f navigateur Chrome: kayjaweb 3la ay page nta fiha, bla ma tkhrej menha.</p>
+      <a class="site" href="https://www.google.com/chrome/" target="_blank" rel="noopener">google.com/chrome</a>
+      <div class="how"><b>Kifach tbda</b>
+        <ol>
+          <li>Khassek <b>Chrome 3la PC wla Mac</b> (desktop, machi t&eacute;l&eacute;phone), m7elloul b Gmail dyalk.</li>
+          <li>Click 3la <b>l'ic&ocirc;ne dyal Gemini</b> f la barre dyal Chrome (fo9 3la limen).</li>
+          <li>Sewlo 3la s-safha li nta fiha.</li>
+        </ol>
+      </div>
+      <div class="prompt" id="p-chrome"><span class="lbl">JEREB HADI</span>Lakhkhes liya had la page b darija, w 3tini ghir les points l-mohimmin f des bullet points.<button class="copy" data-for="p-chrome">Copier</button></div>
+      <p class="hint">Mazal kayweslo bih l koulchi chwiya b chwiya &mdash; ila ma l9itihch, 3awed chouf men b3d.</p>
     </div>
 
     <div class="tool">
       <span class="num">10</span>
       <h3>Antigravity</h3>
-      <p>L'&eacute;diteur dyal Google b les agents AI: kat3tih l-mission, w kaykhdem 3la l-code bo7do. (PC w Mac, l li kay-codi.)</p>
-      <a href="https://antigravity.google" target="_blank" rel="noopener">antigravity.google</a>
+      <p>L'&eacute;diteur dyal Google b les agents AI: kat3tih l-mission, w kaykhdem 3la l-code bo7do &mdash; kaykteb, kayjereb, w kayweriik chno dar.</p>
+      <a class="site" href="https://antigravity.google" target="_blank" rel="noopener">antigravity.google</a>
+      <div class="how"><b>Kifach tbda</b>
+        <ol>
+          <li>T&eacute;l&eacute;charger l'application men <b>antigravity.google</b> (PC w Mac &mdash; hada l li kay-codi).</li>
+          <li>Dkhel b Gmail dyalk w 7ell dossier dyal l-projet (wla dossier khawi).</li>
+          <li>Kteb l-mission f l'agent, w khellih yekhdem.</li>
+        </ol>
+      </div>
+      <div class="prompt" id="p-anti"><span class="lbl">PROMPT</span>Crée-moi un site portfolio simple en HTML et CSS: <span class="blank">mon nom, 3 projets avec des images, et une section contact</span>. Lance-le localement pour que je le voie dans le navigateur.<button class="copy" data-for="p-anti">Copier</button></div>
     </div>
   </section>
 
@@ -112,36 +167,76 @@
     <div class="tool">
       <span class="num">01</span>
       <h3>Gemini Notebook <span class="in">kan smitou NotebookLM</span></h3>
-      <p>Kat3tih les cours dyalk, w kayreddhom lik r&eacute;sum&eacute;, podcast w quiz.</p>
-      <a href="https://notebooklm.google.com" target="_blank" rel="noopener">notebooklm.google.com</a>
+      <p>Kat3tih les cours dyalk, w kayreddhom lik r&eacute;sum&eacute;, podcast w quiz &mdash; kolchi men les documents DYALK, machi men l'internet.</p>
+      <a class="site" href="https://notebooklm.google.com" target="_blank" rel="noopener">notebooklm.google.com</a>
+      <div class="how"><b>Kifach tbda</b>
+        <ol>
+          <li>Sir l <b>notebooklm.google.com</b> w dkhel b Gmail dyalk.</li>
+          <li>Click <b>"Create new"</b> w zid les cours dyalk: PDF, Word, slides, wla lien YouTube.</li>
+          <li>Men lfo9 3ndek: <b>R&eacute;sum&eacute;</b>, <b>Audio Overview</b> (podcast b jouj voix), w <b>Quiz</b>.</li>
+        </ol>
+      </div>
+      <div class="prompt" id="p-notebook"><span class="lbl">PROMPT (F CHAT DYAL NOTEBOOK)</span>Dir liya résumé mfassal b <span class="blank">français</span> dyal had le cours, section b section. Mn b3d dir liya 10 questions quiz m3a les réponses, bach n7adder l <span class="blank">l'examen dyal la semaine jaya</span>.<button class="copy" data-for="p-notebook">Copier</button></div>
     </div>
 
     <div class="tool">
       <span class="num">02</span>
       <h3>Flow</h3>
-      <p>Katkteb chno bghiti, w kaysayeb lik video b l'AI. Kol nhar 3ndek 50 cr&eacute;dits fabor.</p>
-      <a href="https://flow.google.com" target="_blank" rel="noopener">flow.google.com</a>
+      <p>Katkteb chno bghiti, w kaysayeb lik video b l'AI. Kol nhar 3ndek <b>50 cr&eacute;dits fabor</b>.</p>
+      <a class="site" href="https://flow.google.com" target="_blank" rel="noopener">flow.google.com</a>
+      <div class="how"><b>Kifach tbda</b>
+        <ol>
+          <li>Sir l <b>flow.google.com</b> w dkhel b Gmail dyalk (khassek 18+).</li>
+          <li>Click <b>"New project"</b>, w kteb l-description dyal l-video f la barre.</li>
+          <li>Khtar l-format (vertical l Insta/TikTok) w generi. Kol video 9sira kat-akol chi cr&eacute;dits.</li>
+        </ol>
+      </div>
+      <div class="prompt" id="p-flow"><span class="lbl">PROMPT</span>Une vidéo verticale de 8 secondes: <span class="blank">un chat orange qui conduit une petite voiture dans les rues de Casablanca au coucher du soleil</span>, style cinématique, la caméra suit la voiture de près.<button class="copy" data-for="p-flow">Copier</button></div>
     </div>
 
     <div class="tool">
       <span class="num">03</span>
       <h3>Stitch <span class="in">by Google</span></h3>
-      <p>Katkteb l'application li bghiti, w kaysayeb lik les &eacute;crans dyalha: design w code.</p>
-      <a href="https://stitch.withgoogle.com" target="_blank" rel="noopener">stitch.withgoogle.com</a>
+      <p>Katkteb l'application li bghiti, w kaysayeb lik les &eacute;crans dyalha: design kamel + l-code.</p>
+      <a class="site" href="https://stitch.withgoogle.com" target="_blank" rel="noopener">stitch.withgoogle.com</a>
+      <div class="how"><b>Kifach tbda</b>
+        <ol>
+          <li>Sir l <b>stitch.withgoogle.com</b> w dkhel b Gmail dyalk.</li>
+          <li>Kteb l'application li bghiti <b>b d&eacute;tail</b>: chkoun ghadi yst3melha w chno kadir.</li>
+          <li>Kaysayeb lik les &eacute;crans; t9der tgol lih ibeddel, w takhod l-code wla tsiftha l Figma.</li>
+        </ol>
+      </div>
+      <div class="prompt" id="p-stitch"><span class="lbl">PROMPT</span>Une application mobile pour <span class="blank">une salle de sport à Casablanca</span>: la liste des membres, qui a payé ce mois-ci, et un bouton pour envoyer un rappel à ceux qui n'ont pas payé. Design sombre et moderne.<button class="copy" data-for="p-stitch">Copier</button></div>
     </div>
 
     <div class="tool">
       <span class="num">04</span>
       <h3>Nano Banana <span class="in">f Gemini</span></h3>
-      <p>Kat3tih tswira, katgol lih chno ibeddel fiha, w kaybeddelha f tawani.</p>
-      <a href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a>
+      <p>Kat3tih tswira, katgol lih chno ibeddel fiha, w kaybeddelha f tawani &mdash; bla Photoshop.</p>
+      <a class="site" href="https://gemini.google.com" target="_blank" rel="noopener">gemini.google.com</a>
+      <div class="how"><b>Kifach tbda</b>
+        <ol>
+          <li>Sir l <b>gemini.google.com</b> w dkhel b Gmail dyalk.</li>
+          <li>Click 3la <b>+</b> w upload tswira men t&eacute;l&eacute;phone wla PC dyalk.</li>
+          <li>Kteb chno bghiti ibeddel fiha, b d&eacute;tail.</li>
+        </ol>
+      </div>
+      <div class="prompt" id="p-nano"><span class="lbl">PROMPT</span>Beddel l-background dyal had tswira: dir <span class="blank">l-produit</span> f studio professionnel b background blanc w éclairage mzyan, bla ma tbeddel <span class="blank">l-produit</span> nitou.<button class="copy" data-for="p-nano">Copier</button></div>
     </div>
 
     <div class="tool">
       <span class="num">05</span>
       <h3>Pomelli</h3>
-      <p>Kat3tih ghir l-lien dyal site dyalk, w kaysayeb lik les posts dyal social media.</p>
-      <a href="https://labs.google.com/pomelli" target="_blank" rel="noopener">labs.google.com/pomelli</a>
+      <p>Kat3tih ghir l-lien dyal site web dyalk, w kaysayeb lik les posts dyal social media b l-style dyal l-marque dyalk.</p>
+      <a class="site" href="https://labs.google.com/pomelli" target="_blank" rel="noopener">labs.google.com/pomelli</a>
+      <div class="how"><b>Kifach tbda</b>
+        <ol>
+          <li>Sir l <b>labs.google.com/pomelli</b> w dkhel b Gmail dyalk (daba kheddam b l'anglais).</li>
+          <li>Lsa9 <b>l-lien dyal site web dyalk</b> &mdash; kay9ra l-marque dyalk w kaysayeb "Business DNA".</li>
+          <li>Khtar les posts li 3jbok, beddel l-texte ila bghiti, w t&eacute;l&eacute;chargehom.</li>
+        </ol>
+      </div>
+      <p class="hint">Ma 3ndek site? 7et lien dyal page Instagram wla LinkedIn dyal l-business dyalk.</p>
     </div>
   </section>
 
@@ -150,5 +245,16 @@
     <p class="mono">CHMEN WA7ED FIHOM BGHITI VIDEO 3LIH? GOLHA LIYA F LES COMMENTAIRES.</p>
   </footer>
 </div>
+<script>
+  document.querySelectorAll('.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var box = document.getElementById(b.dataset.for).cloneNode(true);
+      box.querySelector('.copy').remove();
+      var l = box.querySelector('.lbl'); if (l) l.remove();
+      var t = box.textContent.trim();
+      (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () { b.textContent = 'Copié ✓'; setTimeout(function () { b.textContent = 'Copier'; }, 1500); }, function () { b.textContent = 'Sélectionne w copie'; });
+    });
+  });
+</script>
 </body>
 </html>
