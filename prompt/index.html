@@ -41,6 +41,19 @@
   pre { white-space: pre-wrap; font-size: 14.5px; line-height: 1.5; margin: 0; background: #f3ede2; border: 1.5px dashed var(--muted); border-radius: 10px; padding: 12px; font-family: ui-monospace, Consolas, monospace; }
   .copy { font-size: 13px; font-weight: 800; padding: 6px 12px; border: 2.5px solid var(--ink); border-radius: 10px; background: var(--amb); box-shadow: 2px 2px 0 var(--ink); cursor: pointer; color: var(--ink); flex: none; }
   .copy.done { background: #3ddc84; }
+  .btn { display: block; text-align: center; margin: 18px 0 8px; padding: 16px; font-weight: 800; font-size: 18px; color: #fff; background: var(--red);
+    border: 3px solid var(--ink); border-radius: 14px; box-shadow: 5px 6px 0 var(--ink); text-decoration: none; transition: transform .1s, box-shadow .1s; }
+  .btn:active { transform: translate(3px, 4px); box-shadow: 2px 2px 0 var(--ink); }
+  .plang { display: none; }
+  @media print {
+    body { background: #fff; } main { max-width: none; padding: 0; }
+    .tabs, .copy, .btn { display: none !important; }
+    .lang { display: block !important; break-before: page; } #dj { break-before: auto; }
+    .plang { display: block; font-size: 22px; letter-spacing: .06em; color: var(--red); margin: 6px 0 0; }
+    .card { opacity: 1 !important; transform: none !important; break-inside: avoid; box-shadow: 3px 4px 0 var(--ink); }
+    .chips span { opacity: 1 !important; transform: none !important; animation: none !important; }
+    .ag, .ag * { animation: none !important; }
+  }
   .foot { font-size: 13px; color: var(--muted); margin-top: 26px; text-align: center; }
   
 .ag *{transform-box:fill-box}
@@ -77,11 +90,14 @@
     <div class="chips" aria-label="les 6 éléments"><span>ROLE</span><span>TASK</span><span>CONTEXT</span><span>REASONING</span><span>STOP</span><span>OUTPUT</span></div>
   </div>
 
+  <a class="btn" href="kaiz0-PROMPT-guide.pdf">📄 Telecharger le PDF (darija · English · français)</a>
+
   <div class="tabs" role="tablist">
     <button class="tab on" data-l="dj">DARIJA</button><button class="tab" data-l="en">ENGLISH</button><button class="tab" data-l="fr">FRANÇAIS</button>
   </div>
 
   <section class="lang on" id="dj">
+    <h3 class="plang">DARIJA</h3>
     <div class="card"><h2>LES 6 7WAYJ</h2>
       <div class="layer"><span class="n">1</span><p><b>ROLE</b> · 9ol lih chkoun howa.<br><span class="why">3lach:</span> kayjawbek b 3a9liya dyal khabir f dak l-midan.<br><span class="ex">Mital: «Nta recruteur 3ndek 10 snin f l'informatique.»</span></p></div>
       <div class="layer"><span class="n">2</span><p><b>TASK</b> · Wedde7 chno bghiti bdabt.<br><span class="why">3lach:</span> kolma kant l-mohimma wad7a, kolma l-jawab d9i9.<br><span class="ex">Mital: «Dir lia plan dyal 30 yom bach nbi3 ktar f Instagram.»</span></p></div>
@@ -114,6 +130,7 @@ OUTPUT: F lista: chno nbeddel, 3lach, kifach nktebha.</pre></div>
   </section>
 
   <section class="lang" id="en">
+    <h3 class="plang">ENGLISH</h3>
     <div class="card"><h2>THE 6 PARTS</h2>
       <div class="layer"><span class="n">1</span><p><b>ROLE</b> · Tell it who it is.<br><span class="why">Why:</span> it answers with the mindset of an expert in that field.<br><span class="ex">Example: "You are a recruiter with 10 years in IT."</span></p></div>
       <div class="layer"><span class="n">2</span><p><b>TASK</b> · Say exactly what you want.<br><span class="why">Why:</span> the clearer the task, the more precise the answer.<br><span class="ex">Example: "Make me a 30-day plan to sell more on Instagram."</span></p></div>
@@ -146,6 +163,7 @@ OUTPUT: As a list: what to change, why, how to write it.</pre></div>
   </section>
 
   <section class="lang" id="fr">
+    <h3 class="plang">FRANÇAIS</h3>
     <div class="card"><h2>LES 6 ÉLÉMENTS</h2>
       <div class="layer"><span class="n">1</span><p><b>ROLE</b> · Dis-lui qui elle est.<br><span class="why">Pourquoi:</span> elle répond avec la logique d'un expert du domaine.<br><span class="ex">Exemple: « Tu es recruteur avec 10 ans dans l'informatique. »</span></p></div>
       <div class="layer"><span class="n">2</span><p><b>TASK</b> · Dis exactement ce que tu veux.<br><span class="why">Pourquoi:</span> plus la tâche est claire, plus la réponse est précise.<br><span class="ex">Exemple: « Fais-moi un plan de 30 jours pour vendre plus sur Instagram. »</span></p></div>
